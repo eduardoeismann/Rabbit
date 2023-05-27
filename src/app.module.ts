@@ -5,6 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { Customer, CustomerSchema } from './schemas/customer.schema';
 import { CustomerService } from './services/customer.service';
 import { CustomerController } from './controllers/customer.controller';
+import { RabbitMQModule } from './modules/rabbit-mq.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { CustomerController } from './controllers/customer.controller';
     MongooseModule.forFeature([
       { name: Customer.name, schema: CustomerSchema },
     ]),
+    RabbitMQModule,
   ],
   controllers: [AppController, CustomerController],
   providers: [AppService, CustomerService],
