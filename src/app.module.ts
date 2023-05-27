@@ -9,9 +9,7 @@ import { CustomerController } from './controllers/customer.controller';
 @Module({
   imports: [
     MongooseModule.forRoot(
-      // YOUR CONNECTION HERE
-      // connection sample
-      `mongodb+srv://<YOUR_USER>:<YOUR_PASSWORD>@<YOUR_CLUSTER>/?retryWrites=true&w=majority`,
+      `mongodb+srv://<YOUR_USER>:<YOUR_PASSWORD>@cluster06165.fku17ej.mongodb.net/?retryWrites=true&w=majority`,
     ),
     MongooseModule.forFeature([
       { name: Customer.name, schema: CustomerSchema },
